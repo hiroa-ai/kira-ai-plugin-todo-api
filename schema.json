@@ -1,0 +1,49 @@
+{
+    "info": {
+        "type": "info",
+        "name": "NOTICE",
+        "description": "This plugin needs a [todo-api](https://github.com/xxynet/todo-api) instance deployed.",
+        "locales": {
+            "zh": {
+                "name": "注意",
+                "description": "此插件需要部署 [todo-api](https://github.com/xxynet/todo-api) 实例。"
+            }
+        }
+    },
+    "server_url": {
+        "type": "string",
+        "name": "Server URL",
+        "description": "The URL of the todo-api server.",
+        "default": "http://localhost:5236",
+        "locales": {
+            "zh": {
+                "name": "服务器 URL",
+                "description": "todo-api 服务器的 URL。"
+            }
+        }
+    },
+    "username": {
+        "type": "string",
+        "name": "Username",
+        "description": "The username for authentication.",
+        "default": "",
+        "locales": {
+            "zh": {
+                "name": "用户名",
+                "description": "用于身份验证的用户名。"
+            }
+        }
+    },
+    "password": {
+        "type": "sensitive",
+        "name": "Password",
+        "description": "The password for authentication.",
+        "default": "",
+        "locales": {
+            "zh": {
+                "name": "密码",
+                "description": "用于身份验证的密码。"
+            }
+        }
+    }
+}
