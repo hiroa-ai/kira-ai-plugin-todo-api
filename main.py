@@ -36,8 +36,8 @@ class MyPlugin(BasePlugin):
             )
             resp.raise_for_status()
             data = resp.json()
-            self._token = data["access_token"]
-            self._refresh_token = data["refresh_token"]
+            self._token = data.get("access_token")
+            self._refresh_token = data.get("refresh_token")
             logger.info("[todo-api] Login OK")
         except Exception as e:
             logger.error(f"[todo-api] Login failed: {e}")
@@ -55,8 +55,8 @@ class MyPlugin(BasePlugin):
                 logger.warning(f"[todo-api] Token refresh failed: {resp.status_code}")
                 return False
             data = resp.json()
-            self._token = data["access_token"]
-            self._refresh_token = data["refresh_token"]
+            self._token = data.get("access_token")
+            self._refresh_token = data.get("refresh_token") or self._refresh_token
             logger.info("[todo-api] Token refreshed")
             return True
         except Exception as e:
